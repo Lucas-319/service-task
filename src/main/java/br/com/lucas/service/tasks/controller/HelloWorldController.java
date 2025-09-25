@@ -1,4 +1,4 @@
-package br.com.lucas.service.tasks;
+package br.com.lucas.service.tasks.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
