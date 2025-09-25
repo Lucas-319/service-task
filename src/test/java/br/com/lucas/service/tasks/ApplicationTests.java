@@ -1,4 +1,4 @@
-package br.com.lucas.service.one;
+package br.com.lucas.service.tasks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
