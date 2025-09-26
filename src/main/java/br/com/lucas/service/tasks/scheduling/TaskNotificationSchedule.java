@@ -16,7 +16,7 @@ public class TaskNotificationSchedule {
         this.tasksService = tasksService;
     }
 
-    @Scheduled(cron = "0 0 * * *")
+    @Scheduled(fixedRate = 60000)
     public void checkAndNotityTasks() {
         log.info("Verificar tarefas próximas do vencimento e enviar notificação caso alguma seja encontrada.");
         this.tasksService.sendNotificationForDueTasks();

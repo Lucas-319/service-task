@@ -31,7 +31,7 @@ public class TasksService {
         LocalDate deadLine = LocalDate.now().plusDays(1);
         List<Tasks> tasks = tasksRepository.findTasksDueWithinDeadLine(deadLine);
         tasks.forEach(task -> {
-            NotificationRequest request = new NotificationRequest("Sua tarefa: " + task.getTitle() + " está vencida!", task.getEmail());
+            NotificationRequest request = new NotificationRequest("Sua tarefa: " + task.getTitle() + " está prestes a vencer!", task.getEmail());
             notificationClient.sendNotification(request);
             task.setNotified(true);
             tasksRepository.save(task);

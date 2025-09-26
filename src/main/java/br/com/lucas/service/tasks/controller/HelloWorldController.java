@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
-    @Value("${message:Hello default}")
-    private String message;
+    @Value("${server.port:padrão 8080}")
+    private String serverPort;
 
-    @GetMapping("/message")
+    @GetMapping("/server-port")
     public String getMessage() {
-        return this.message;
+        return "Rodando na porta: " + this.serverPort;
     }
 }
