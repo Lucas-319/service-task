@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Tasks {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +32,9 @@ public class Tasks {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    public Tasks(String title, String email, LocalDate dueDate) {
-        this.title = title;
-        this.dueDate = dueDate;
+    public Task(TaskRequest taskRequest) {
+        this.title = taskRequest.title();
+        this.email = taskRequest.email();
+        this.dueDate = taskRequest.dueDate();
     }
 }

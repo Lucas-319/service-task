@@ -1,8 +1,7 @@
 package br.com.lucas.service.tasks.scheduling;
 
-import br.com.lucas.service.tasks.service.TasksService;
+import br.com.lucas.service.tasks.service.TaskService;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.annotations.Comment;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -10,15 +9,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class TaskNotificationSchedule {
 
-    private final TasksService tasksService;
+    private final TaskService taskService;
 
-    public TaskNotificationSchedule(TasksService tasksService) {
-        this.tasksService = tasksService;
+    public TaskNotificationSchedule(TaskService taskService) {
+        this.taskService = taskService;
     }
 
     @Scheduled(fixedRate = 60000)
     public void checkAndNotityTasks() {
         log.info("Verificar tarefas próximas do vencimento e enviar notificação caso alguma seja encontrada.");
-        this.tasksService.sendNotificationForDueTasks();
+        this.taskService.sendNotificationForDueTasks();
     }
 }
