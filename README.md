@@ -1,4 +1,4 @@
-# service-task
+# Service Task
 
 Serviço de tarefas do projeto [microservices-demo](https://github.com/Lucas-319/microservices-demo). Cria tarefas e verifica, de forma agendada, aquelas com vencimento por data. Quando necessário, aciona o [service-notification](https://github.com/Lucas-319/service-notification) para envio de e-mails (OpenFeign + Eureka).
 
